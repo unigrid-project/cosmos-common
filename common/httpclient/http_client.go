@@ -9,15 +9,15 @@ import (
 	"github.com/hashicorp/go-cleanhttp"
 )
 
-var HttpClient *http.Client
+var Client *http.Client
 
 func init() {
-	// Initialize HttpClient with cleanhttp for default settings
-	HttpClient = cleanhttp.DefaultPooledClient()
+	// Initialize Client with cleanhttp for default settings
+	Client = cleanhttp.DefaultPooledClient()
 	// Customizing the Transport, if necessary
-	transport := HttpClient.Transport.(*http.Transport)
+	transport := Client.Transport.(*http.Transport)
 	transport.MaxIdleConnsPerHost = 50 // Set a limit for idle connections per host
 
 	// Setting a timeout for the client
-	HttpClient.Timeout = 15 * time.Second
+	Client.Timeout = 15 * time.Second
 }
