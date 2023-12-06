@@ -3,6 +3,7 @@
 package httpclient
 
 import (
+	"crypto/tls"
 	"net/http"
 	"time"
 
@@ -14,8 +15,9 @@ var Client *http.Client
 func init() {
 	// Initialize Client with cleanhttp for default settings
 	Client = cleanhttp.DefaultPooledClient()
-	// Customizing the Transport, if necessary
+	// Customize the Transport to disable TLS verification
 	transport := Client.Transport.(*http.Transport)
+	transport.TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
 	transport.MaxIdleConnsPerHost = 50 // Set a limit for idle connections per host
 
 	// Setting a timeout for the client
