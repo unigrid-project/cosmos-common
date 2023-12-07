@@ -21,5 +21,5 @@ func init() {
 	transport.MaxIdleConnsPerHost = 5 // Set a limit for idle connections per host
 
 	// Setting a timeout for the client
-	Client.Timeout = 15 * time.Second
+	Client.Timeout = 5 * time.Second
 }
