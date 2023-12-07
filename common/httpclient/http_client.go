@@ -18,7 +18,7 @@ func init() {
 	// Customize the Transport to disable TLS verification
 	transport := Client.Transport.(*http.Transport)
 	transport.TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
-	transport.MaxIdleConnsPerHost = 50 // Set a limit for idle connections per host
+	transport.MaxIdleConnsPerHost = 5 // Set a limit for idle connections per host
 
 	// Setting a timeout for the client
 	Client.Timeout = 15 * time.Second
