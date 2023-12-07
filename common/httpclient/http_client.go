@@ -14,7 +14,7 @@ var Client *http.Client
 
 func init() {
 	// Initialize Client with cleanhttp for default settings
-	Client = cleanhttp.DefaultPooledClient()
+	Client = cleanhttp.DefaultClient()
 	// Customize the Transport to disable TLS verification
 	transport := Client.Transport.(*http.Transport)
 	transport.TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
