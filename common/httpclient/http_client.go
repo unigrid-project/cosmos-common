@@ -1,4 +1,4 @@
-// http_client.go in github.com/unigrid-project/cosmos-sdk-common
+// http_client.go in github.com/unigrid-project/cosmos-common
 
 package httpclient
 
